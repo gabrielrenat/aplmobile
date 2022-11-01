@@ -1,8 +1,8 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { ChatScreen, PerfilScreen, MapScreen, SairScreen, AcelerometroScreen } from "../screens";
+import { ChatScreen, PedometroScreen, PerfilScreen, MapScreen, SairScreen, AcelerometroScreen, MagnetoScreen, GyroscopioScreen } from "../screens";
 import colors from "../styles/colors";
-import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { FontAwesome, Ionicons, Foundation } from "@expo/vector-icons";
 import { Text, StyleSheet } from "react-native";
 
 const Drawer = createDrawerNavigator();
@@ -66,10 +66,39 @@ export default function DrawerNavigation() {
             <FontAwesome
               name="car"
               size={24}
-              color={colors.white}
-            />
+              color={colors.white} />
           ),
         }}
+      />
+      <Drawer.Screen
+        name="Pedometro"
+        component={PedometroScreen}
+        options={{
+          drawerLabel: "Pedometro",
+          drawerIcon: () => (
+            <Foundation name="foot" size={24} color={colors.white} />
+          ),
+        }} 
+      />
+      <Drawer.Screen
+        name="Magneto"
+        component={MagnetoScreen}
+        options={{
+          drawerLabel: "Magneto",
+          drawerIcon: () => (
+            <FontAwesome name="magnet" size={24} color={colors.white} />
+          ),
+        }} 
+      />
+      <Drawer.Screen
+        name="Gyroscopio"
+        component={GyroscopioScreen}
+        options={{
+          drawerLabel: "Gyroscópio",
+          drawerIcon: () => (
+            <FontAwesome name="balance-scale" size={24} color={colors.white} />
+          ),
+        }} 
       />
     </Drawer.Navigator>
   );
