@@ -1,8 +1,8 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { ChatScreen, PedometroScreen, PerfilScreen, MapScreen, SairScreen, AcelerometroScreen, MagnetoScreen, GyroscopioScreen } from "../screens";
+import { ChatScreen, PedometroScreen, PerfilScreen, MapScreen, SairScreen, AcelerometroScreen, MagnetoScreen, GyroscopioScreen, VideoAudioScreen, QrCodeScreen, CameraScreen } from "../screens";
 import colors from "../styles/colors";
-import { FontAwesome, Ionicons, Foundation } from "@expo/vector-icons";
+import { FontAwesome, Ionicons, Foundation, MaterialCommunityIcons } from "@expo/vector-icons";
 import { Text, StyleSheet } from "react-native";
 
 const Drawer = createDrawerNavigator();
@@ -97,6 +97,48 @@ export default function DrawerNavigation() {
           drawerLabel: "Gyroscópio",
           drawerIcon: () => (
             <FontAwesome name="balance-scale" size={24} color={colors.white} />
+          ),
+        }} 
+      />
+      <Drawer.Screen
+        name="AudioVideo"
+        component={VideoAudioScreen}
+        options={{
+          drawerLabel: "Áudio Vídeo",
+          drawerIcon: () => (
+            <MaterialCommunityIcons 
+              name="video" 
+              size={24} 
+              color={colors.white} 
+            />
+          ),
+        }} 
+      />
+      <Drawer.Screen
+        name="QrCode"
+        component={QrCodeScreen}
+        options={{
+          drawerLabel: "Qrcode",
+          drawerIcon: () => (
+            <MaterialCommunityIcons 
+              name="qrcode-scan" 
+              size={24} 
+              color={colors.white} 
+            />
+          ),
+        }} 
+      />
+      <Drawer.Screen
+        name="Camera"
+        component={CameraScreen}
+        options={{
+          drawerLabel: "Câmera",
+          drawerIcon: () => (
+            <MaterialCommunityIcons 
+              name="camera" 
+              size={24} 
+              color={colors.white} 
+            />
           ),
         }} 
       />
